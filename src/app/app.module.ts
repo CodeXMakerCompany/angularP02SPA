@@ -8,6 +8,8 @@ import { APP_ROUTING } from './app.routes';
 
 //Servicios
 
+import { GaleriaService } from './servicios/galeria.service';
+
 
 // Componentes
 import { AppComponent } from './app.component';
@@ -28,7 +30,9 @@ import { GaleriaComponent } from './components/galeria/galeria.component';
     BrowserModule,
     APP_ROUTING
   ],
-  providers: [],
+  providers: [
+    GaleriaService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
