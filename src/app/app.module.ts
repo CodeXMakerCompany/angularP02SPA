@@ -17,6 +17,8 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { GaleriaComponent } from './components/galeria/galeria.component';
+import { PictureComponent } from './components/picture/picture.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { GaleriaComponent } from './components/galeria/galeria.component';
     NavbarComponent,
     HomeComponent,
     AboutComponent,
-    GaleriaComponent
+    GaleriaComponent,
+    PictureComponent
   ],
   imports: [
     BrowserModule,
