@@ -16,7 +16,7 @@ export class GaleriaService {
       bio: "Esta es una prueba de texto para la card prototypeB",
       img: "assets/images/cuteLady.png",
       aparicion: "1939-05-01",
-      marca:"codex"
+      marca:"maker"
     },
     {
       nombre: "Miku sad",
@@ -30,7 +30,7 @@ export class GaleriaService {
       bio: "Esta es una prueba de texto para la card prototypeD",
       img: "assets/images/tosa.png",
       aparicion: "1962-05-01",
-      marca:"codex"
+      marca:"maker"
     },
     {
       nombre: "Miku sentada",
@@ -44,7 +44,7 @@ export class GaleriaService {
       bio: "Esta es una prueba de texto para la card prototypeF",
       img: "assets/images/mikuRab.png",
       aparicion: "1962-08-01",
-      marca:"codex"
+      marca:"maker"
     }
   ];
 
@@ -58,7 +58,15 @@ export class GaleriaService {
 
 
    getGaleria(){
+
      return this.galeria;
+
+   }
+
+   getPicture( idx: string ){
+
+     return this.galeria[idx];
+
    }
 
 }

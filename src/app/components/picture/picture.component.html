@@ -1,3 +1,30 @@
-<p>
-  picture works!
-</p>
+<h1 class="animated fadeIn" >{{ picture.nombre }}<br><small> {{ picture.aparicion }} </small></h1>
+<hr>
+
+<div class="row">
+
+
+  <div class="col-md-4 animated fadeIn" >
+
+      <img [src]=" picture.img " class="img-fluid" [alt]="picture.nombre">
+
+      <br><br>
+      <a [routerLink]="['/galeria']" class="btn btn-outline-danger btn-block">Regresar</a>
+
+  </div>
+
+  <div class="col-md-8">
+      <h3> {{ picture.nombre }} </h3>
+      <hr>
+      <p>
+            {{ picture.bio }}
+      </p>
+
+      <div>
+            <img *ngIf="picture.marca=='codex'" class="img-logo" src="assets/images/chibilogoCDX.png" alt="" style="width: 150px; height: 150px;">
+            <img *ngIf="picture.marca=='maker'" class="img-logo" src="assets/images/logo_GearProject.png" alt="" style="width: 300px; height: 150px;" >
+      </div>
+
+  </div>
+
+</div>
