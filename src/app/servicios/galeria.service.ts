@@ -8,42 +8,42 @@ export class GaleriaService {
       nombre: "Chica con alas",
       bio: "Esta es una prueba de texto para la card prototypeA",
       img: "assets/images/cute.png",
-      aparicion: "1941-11-01",
+      aparicion: "2019-11-01",
       marca:"codex"
     },
     {
       nombre: "Chica con sueter",
       bio: "Esta es una prueba de texto para la card prototypeB",
       img: "assets/images/cuteLady.png",
-      aparicion: "1939-05-01",
+      aparicion: "2018-05-01",
       marca:"maker"
     },
     {
       nombre: "Miku sad",
       bio: "Esta es una prueba de texto para la card prototypeC",
       img: "assets/images/idkG.png",
-      aparicion: "1964-01-01",
+      aparicion: "2017-01-01",
       marca:"codex"
     },
     {
       nombre: "Chica sentada",
       bio: "Esta es una prueba de texto para la card prototypeD",
       img: "assets/images/tosa.png",
-      aparicion: "1962-05-01",
+      aparicion: "2016-05-01",
       marca:"maker"
     },
     {
       nombre: "Miku sentada",
       bio: "Esta es una prueba de texto para la card prototypeE",
       img: "assets/images/miku.png",
-      aparicion: "1940-06-01",
+      aparicion: "2015-06-01",
       marca:"codex"
     },
     {
       nombre: "Miku con conejo",
       bio: "Esta es una prueba de texto para la card prototypeF",
       img: "assets/images/mikuRab.png",
-      aparicion: "1962-08-01",
+      aparicion: "2014-08-01",
       marca:"maker"
     }
   ];
@@ -57,7 +57,7 @@ export class GaleriaService {
    }
 
 
-   getGaleria(){
+   getGaleria():Galeria[]{
 
      return this.galeria;
 
@@ -66,6 +66,25 @@ export class GaleriaService {
    getPicture( idx: string ){
 
      return this.galeria[idx];
+
+   }
+
+   buscarImagenes( termino:string ):Galeria[] {
+
+      let imagenesArr:Galeria[] = [];
+      termino = termino.toLowerCase();
+      // se crea la variable palabra que iterara los registros de la galeria
+      for ( let palabra of this.galeria ){
+
+          let nombre = palabra.nombre.toLowerCase();
+
+          if ( nombre.indexOf ( termino ) >= 0 ) {
+                imagenesArr.push( palabra )
+          }
+
+      }
+
+      return imagenesArr;
 
    }
 

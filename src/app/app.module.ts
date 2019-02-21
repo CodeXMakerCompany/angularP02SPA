@@ -18,6 +18,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { GaleriaComponent } from './components/galeria/galeria.component';
 import { PictureComponent } from './components/picture/picture.component';
+import { SearchComponent } from './components/search/search.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { PictureComponent } from './components/picture/picture.component';
     HomeComponent,
     AboutComponent,
     GaleriaComponent,
-    PictureComponent
+    PictureComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
