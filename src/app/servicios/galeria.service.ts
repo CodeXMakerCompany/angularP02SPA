@@ -74,11 +74,13 @@ export class GaleriaService {
       let imagenesArr:Galeria[] = [];
       termino = termino.toLowerCase();
       // se crea la variable palabra que iterara los registros de la galeria
-      for ( let palabra of this.galeria ){
+      for ( let i = 0; i < this.galeria.length; i ++ ){
 
+          let palabra = this.galeria[i];
           let nombre = palabra.nombre.toLowerCase();
 
           if ( nombre.indexOf ( termino ) >= 0 ) {
+                palabra.idx = i;
                 imagenesArr.push( palabra )
           }
 
@@ -96,5 +98,5 @@ export interface Galeria{
   img: string;
   aparicion: string;
   marca: string;
-
+  idx?: number;
 };

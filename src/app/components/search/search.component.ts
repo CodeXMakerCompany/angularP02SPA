@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GaleriaService } from '../../servicios/galeria.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -12,7 +13,8 @@ export class SearchComponent implements OnInit {
   termino: string;
 
   constructor( private activatedRoute: ActivatedRoute,
-                private _galeriaService: GaleriaService) {
+                private _galeriaService: GaleriaService,
+                  private router:Router) {
 
                  }
 
@@ -23,6 +25,10 @@ export class SearchComponent implements OnInit {
       this.pictures = this._galeriaService.buscarImagenes( params ['termino'] );
         console.log( this.pictures );
     });
+  }
+
+  verPicture( idx:number ){
+    this.router.navigate( ['/picture',idx] );
   }
 
 }
